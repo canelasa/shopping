@@ -1,0 +1,9 @@
+<h1>Edit your Shopping List</h1>
+
+<%= form_for @list do |f| %>
+  <%= f.label :name %> :
+  <%= f.text_field :name %>
+  <%= f.label :description %> :
+  <%= f.text_field :description  %>
+  <%= f.submit 'Update List' %>
+<% end %>
