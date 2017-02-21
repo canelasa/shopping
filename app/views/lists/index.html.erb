@@ -1,8 +1,9 @@
-<!-- # <%= react_component 'Lists' %> -->
-<h1>My Shopping Lists | <%= link_to 'Create a new shopping list', new_list_path %></h1>
+<%= react_component('Lists', lists: @lists) %>
+<%= react_component('Items', items: @items) %>
+<!-- <h1>My Shopping Lists | <%= link_to 'Create a new shopping list', new_list_path %></h1> -->
 
 
-  <% @lists.each do |list| %>
+  <!-- <% @lists.each do |list| %>
   <h1><%= link_to list.name, list_path(list) %></h1>
   <i><%= list.description %></i>
-  <% end %>
+  <% end %> -->
