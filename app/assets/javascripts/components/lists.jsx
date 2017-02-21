@@ -8,7 +8,7 @@ var Lists = React.createClass({
             <div>
               <h3>{list.name}</h3>
               <i>{list.description}</i>
-              <Items items = {items} />
+              <Items items = {list.items} />
             </div>
 
           )
