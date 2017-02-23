@@ -1,6 +1,12 @@
 class ListsController < ApplicationController
   def index
     @lists = List.includes(:items)
+    @lists_json = List.includes(:items).map { |list| list.as_json.merge({items: list.items.as_json}) }
+    respond_to do |format|
+      format.html
+      format.json {render json: @lists_json}
+
+    end
   end
 
   def new

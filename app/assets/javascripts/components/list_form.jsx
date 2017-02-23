@@ -1,4 +1,4 @@
-var ListForm = React.createClass([
+var ListForm = React.createClass({
   render: function() {
     return (
       <div>
@@ -11,4 +11,4 @@ var ListForm = React.createClass([
       </div>
     )
   }
-]);
+});
