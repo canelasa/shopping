@@ -1,16 +1,14 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.includes(:items)
-    @lists_json = List.includes(:items).map { |list| list.as_json.merge({items: list.items.as_json}) }
-    respond_to do |format|
-      format.html
-      format.json {render json: @lists_json}
-
-    end
+    @lists = List.all
+    # @lists_json = List.includes(:items).map { |list| list.as_json.merge({items: list.items.as_json}) }
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @lists_json}
   end
 
   def new
-    @list = List.new
+      @list = List.new
   end
 
   def create
@@ -20,7 +18,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @item = Item.new
+
   end
 
   def edit
@@ -41,6 +39,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:name, :description)
+    params.require(:list).permit(:name, :description, :price, :quantity)
   end
 end
